@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Tasks.Data;
+using Tasks.Repositorios;
 using Tasks.Repositorios.Interfaces;
 
 namespace Tasks
@@ -23,7 +24,7 @@ namespace Tasks
                     options.UseSqlServer(builder.Configuration.GetConnectionString("DataBase"));
                 });
 
-            builder.Services.AddScoped<IUsuarioRepositorio, IUsuarioRepositorio>();
+            builder.Services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
 
             var app = builder.Build();
 
